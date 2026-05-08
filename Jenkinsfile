@@ -4,14 +4,6 @@ pipeline {
 
     stages {
 
-        stage('Checkout') {
-
-            steps {
-                git branch: 'main',
-                url: 'https://github.com/Janutimate/8.2CDevSecOps.git'
-            }
-        }
-
         stage('Install Dependencies') {
 
             steps {
@@ -23,6 +15,19 @@ pipeline {
 
             steps {
                 bat 'npm test || exit /b 0'
+            }
+
+            post {
+
+                always {
+
+                    emailext(
+                        to: 'YOUR_EMAIL@gmail.com',
+                        subject: 'Test Stage Result',
+                        body: 'The Test stage has completed.',
+                        attachLog: true
+                    )
+                }
             }
         }
 
@@ -37,6 +42,19 @@ pipeline {
 
             steps {
                 bat 'npm audit || exit /b 0'
+            }
+
+            post {
+
+                always {
+
+                    emailext(
+                        to: 'YOUR_EMAIL@gmail.com',
+                        subject: 'Security Scan Result',
+                        body: 'The Security Scan stage has completed.',
+                        attachLog: true
+                    )
+                }
             }
         }
     }
