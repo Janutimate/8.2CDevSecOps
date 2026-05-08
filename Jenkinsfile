@@ -21,7 +21,7 @@ pipeline {
 
                 always {
 
-                    emailext(
+                    mail to: "azadehghneiat@gmail.com",
                         to: 'januth1234@gmail.com',
                         subject: 'Test Stage Result',
                         body: 'The Test stage has completed.',
