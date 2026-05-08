@@ -21,8 +21,7 @@ pipeline {
 
                 always {
 
-                    mail to: "azadehghneiat@gmail.com",
-                        to: 'januth1234@gmail.com',
+                    mail to: "januth1234@gmail.com",
                         subject: 'Test Stage Result',
                         body: 'The Test stage has completed.',
                         attachLog: true
