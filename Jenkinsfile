@@ -19,13 +19,18 @@ pipeline {
 
             post {
 
-                always {
+                success {
 
-                    mail to: "januth1234@gmail.com",
-                        subject: 'Test Stage Result',
-                        body: 'The Test stage has completed.',
-                        attachLog: true
-                    )
+                    mail to: 'januth1234@gmail.com',
+                         subject: 'Test Stage Successful',
+                         body: 'The Test stage completed successfully.'
+                }
+
+                failure {
+
+                    mail to: 'januth1234@gmail.com',
+                         subject: 'Test Stage Failed',
+                         body: 'The Test stage failed.'
                 }
             }
         }
@@ -45,13 +50,18 @@ pipeline {
 
             post {
 
-                always {
+                success {
 
-                    mail to: "januth1234@gmail.com",
-                        subject: 'Security Scan Result',
-                        body: 'The Security Scan stage has completed.',
-                        attachLog: true
-                    )
+                    mail to: 'januth1234@gmail.com',
+                         subject: 'Security Scan Successful',
+                         body: 'The Security Scan stage completed successfully.'
+                }
+
+                failure {
+
+                    mail to: 'januth1234@gmail.com',
+                         subject: 'Security Scan Failed',
+                         body: 'The Security Scan stage failed.'
                 }
             }
         }
