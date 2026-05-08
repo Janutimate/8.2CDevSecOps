@@ -22,7 +22,7 @@ pipeline {
                 always {
 
                     emailext(
-                        to: 'YOUR_EMAIL@gmail.com',
+                        to: 'januth1234@gmail.com',
                         subject: 'Test Stage Result',
                         body: 'The Test stage has completed.',
                         attachLog: true
@@ -49,7 +49,7 @@ pipeline {
                 always {
 
                     emailext(
-                        to: 'YOUR_EMAIL@gmail.com',
+                        to: 'januth1234@gmail.com',
                         subject: 'Security Scan Result',
                         body: 'The Security Scan stage has completed.',
                         attachLog: true
